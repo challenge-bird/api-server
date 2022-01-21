@@ -10,14 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import kr.co.challengebird.apiserver.domain.user.User;
+import lombok.Getter;
 
+@Getter
 public class Attendance {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private LocalDateTime checkDate;
+	private LocalDateTime checkDateTime;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
