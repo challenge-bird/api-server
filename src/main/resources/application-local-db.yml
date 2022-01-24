@@ -9,4 +9,8 @@ spring:
         driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     jpa:
         hibernate:
-            ddl-auto: update
+            ddl-auto: create
+        properties:
+            hibernate:
+                show_sql: false
+

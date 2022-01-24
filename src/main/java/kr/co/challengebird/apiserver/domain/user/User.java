@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,18 +27,20 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
 	private Long id;
 
 	@Column(length = 20, nullable = false)
 	private String name;
 
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true, updatable = false)
 	private String email;
 
 	private String password;
 
 	private String picture;
 
+	@Enumerated(EnumType.STRING)
 	private UserRole userRole;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
@@ -52,5 +57,13 @@ public class User {
 	public void update(UserUpdateDto dto) {
 		name = dto.getName();
 		picture = dto.getPicture();
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 }

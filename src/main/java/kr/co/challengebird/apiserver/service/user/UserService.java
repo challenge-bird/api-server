@@ -23,14 +23,14 @@ public class UserService {
 
 	private final PasswordEncoder passwordEncoder;
 
+	@Transactional(readOnly = true)
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email).orElseThrow(NoSuchUserException::new);
 	}
 
 	public User save(UserSaveDto userSaveDto) {
 		checkDuplicate(userSaveDto.getEmail());
-		User saveUser = userRepository.save(userSaveDto.toEntity(passwordEncoder));
-		return saveUser;
+		return userRepository.save(userSaveDto.toEntity(passwordEncoder));
 	}
 
 	public void checkDuplicate(String email) {
