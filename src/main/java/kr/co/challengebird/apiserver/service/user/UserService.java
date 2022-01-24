@@ -2,6 +2,7 @@ package kr.co.challengebird.apiserver.service.user;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,14 +21,16 @@ public class UserService {
 
 	private final UserRepository userRepository;
 
+	private final PasswordEncoder passwordEncoder;
+
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email).orElseThrow(NoSuchUserException::new);
 	}
 
-	public Long save(UserSaveDto userSaveDto) {
+	public User save(UserSaveDto userSaveDto) {
 		checkDuplicate(userSaveDto.getEmail());
-		User saveUser = userRepository.save(userSaveDto.toEntity());
-		return saveUser.getId();
+		User saveUser = userRepository.save(userSaveDto.toEntity(passwordEncoder));
+		return saveUser;
 	}
 
 	public void checkDuplicate(String email) {

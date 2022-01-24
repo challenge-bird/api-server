@@ -1,2 +1,4 @@
 spring:
-
+  profiles:
+      group:
+          local: local, local-db

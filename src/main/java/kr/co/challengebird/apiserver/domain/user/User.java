@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@Entity
 public class User {
 
 	@Id
@@ -30,6 +32,8 @@ public class User {
 	@Column(nullable = false)
 	private String email;
 
+	private String password;
+
 	private String picture;
 
 	private UserRole userRole;
@@ -37,11 +41,12 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Attendance> attendanceList = new ArrayList<>();
 
-	public User(String name, String email, String picture, UserRole userRole) {
+	public User(String name, String email, String picture, String password, UserRole userRole) {
 		this.name = name;
 		this.email = email;
 		this.picture = picture;
 		this.userRole = userRole;
+		this.password = password;
 	}
 
 	public void update(UserUpdateDto dto) {

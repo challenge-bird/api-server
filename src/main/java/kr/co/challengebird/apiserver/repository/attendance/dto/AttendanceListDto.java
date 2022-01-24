@@ -12,6 +12,6 @@ public class AttendanceListDto {
 	private static final DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
 	public AttendanceListDto(Attendance attendance) {
-		this.checkDateTime = attendance.getCheckDateTime().format(df);
+		this.checkDateTime = attendance.getCheckDateTimeStr();
 	}
 }

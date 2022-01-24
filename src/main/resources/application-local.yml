@@ -1,4 +1,4 @@
 spring:
-    datasource:
-        hikari:
-            jdbc-url:
+  config:
+      activate:
+          on-profile: local
