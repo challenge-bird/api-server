@@ -16,7 +16,7 @@ import kr.co.challengebird.apiserver.exception.NoSuchUserException;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ActiveProfiles("local")
+@ActiveProfiles("local-db")
 class UserRepositoryTest {
 
 	@Autowired
