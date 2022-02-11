@@ -3,9 +3,9 @@ spring:
         activate:
             on-profile: local-db
     datasource:
-        url: jdbc:log4jdbc:mariadb://127.0.0.1:20001/bird?c
+        url: jdbc:log4jdbc:mariadb://127.0.0.1:20001/bird?useSSL=false
         username: bird-dev
-        password: ddev
+        password: devv
         driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     jpa:
         hibernate:

@@ -1,0 +1,14 @@
+spring:
+  config:
+      activate:
+          on-profile: dev
+
+logging:
+    level:
+        jdbc:
+            audit: OFF
+            resultset: OFF
+            resultsettable: ERROR
+            sqlonly: OFF
+            sqltiming: INFO
+            connection: ERROR
