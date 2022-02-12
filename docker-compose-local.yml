@@ -10,9 +10,6 @@ services:
             -   db
         environment:
             SPRING_PROFILES_ACTIVE: local
-            SPRING_DATASOURCE_URL: jdbc:log4jdbc:mariadb://db:3306/bird?useSSL=false
-            SPRING_DATASOURCE_USERNAME: bird-dev
-            SPRING_DATASOURCE_PASSWORD: devv
         links:
             -   db
     db:

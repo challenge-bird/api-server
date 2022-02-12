@@ -2,4 +2,4 @@ spring:
   profiles:
       group:
           local: local, local-db
-          dev: dev
+          dev: dev, dev-db
