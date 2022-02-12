@@ -8,6 +8,4 @@ ARG JAR_FILE=/build/libs/api-server-0.0.1-SNAPSHOT.jar
 
 ADD ${JAR_FILE} challenge-bird-api.jar
 
-ENV SPRING_PROFILE local
-
-ENTRYPOINT ["java","-Dspring.profiles.active=${SPRING_PROFILE}","-jar","/challenge-bird-api.jar"]
+ENTRYPOINT ["java","-jar","/challenge-bird-api.jar"]
