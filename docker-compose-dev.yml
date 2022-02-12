@@ -9,6 +9,7 @@ services:
         depends_on:
             -   db
         environment:
+            SPRING_PROFILES_ACTIVE=dev
             SPRING_DATASOURCE_URL: jdbc:log4jdbc:mariadb://db:3306/bird?useSSL=false
             SPRING_DATASOURCE_USERNAME: bird-dev
             SPRING_DATASOURCE_PASSWORD: devv
