@@ -31,6 +31,8 @@ public class Attendance {
 
 	private LocalTime checkTime;
 
+	private String checkMemo;
+
 	@Transient
 	private String checkDateTimeStr;
 

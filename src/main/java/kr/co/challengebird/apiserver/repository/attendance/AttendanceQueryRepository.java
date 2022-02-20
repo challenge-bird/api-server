@@ -20,6 +20,7 @@ public class AttendanceQueryRepository {
 	public Optional<Attendance> findAttendanceToDayByUserId(Long userId) {
 
 		QAttendance attendance = QAttendance.attendance;
+		// TODO : 쿼리dsl로 해당 데이터 표현
 
 		return null;
 	}

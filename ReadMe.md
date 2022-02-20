@@ -6,6 +6,7 @@
 - springboot 2.6.2
 - spring data jpa
 - spring security
+- jwt
 - lombok
 - mariadb
 
