@@ -31,7 +31,7 @@ public class HelloController {
 	public ResponseEntity<Map<String, Object>> helloJson(@RequestBody Map<String, Object> param) {
 		String test = String.valueOf(param.get("test"));
 
-		test += " post bird~!!!";
+		test += " post bird~!!!!a1";
 
 		param.put("test",test);
 		return ResponseEntity.ok(param);
