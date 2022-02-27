@@ -15,8 +15,8 @@ public class HelloController {
 	}
 
 	@GetMapping("/helloJson")
-	public ResponseEntity<ResponseDto<String>> helloJson() {
+	public ResponseEntity<String> helloJson() {
 		String response = "hello bird~! Json..";
-		return ResponseEntity.ok(new ResponseDto(response));
+		return ResponseEntity.ok(response);
 	}
 }
