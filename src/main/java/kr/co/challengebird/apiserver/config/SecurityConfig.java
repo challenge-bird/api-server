@@ -14,6 +14,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] AUTH_WHITELIST = {
 		"/hello"
+		,"/helloJson"
+		,"/helloPost"
 	};
 
 	@Bean
