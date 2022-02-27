@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.assertj.core.groups.Tuple;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -14,6 +15,7 @@ import kr.co.challengebird.apiserver.domain.user.User;
 import kr.co.challengebird.apiserver.domain.user.UserRole;
 import kr.co.challengebird.apiserver.exception.NoSuchUserException;
 
+@Disabled
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("local-db")
