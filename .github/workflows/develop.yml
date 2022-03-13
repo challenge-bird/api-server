@@ -32,7 +32,7 @@ jobs:
       run: ./gradlew test
 
     - name: Jparangdev's gen8 deploy
-      run:  appleboy/ssh-action@deploy
+      uses: appleboy/ssh-action@deploy
       with:
         host: ${{ secrets.GEN8_HOST }}
         username: ${{ secrets.GEN8_SSH_ID }}
