@@ -41,5 +41,7 @@ jobs:
         script: |
           cd ~/workspace/challenge-bird/api-server
           git pull origin develop
+          ./gradlew clean build
+          docker-compose -f docker-compose-dev.yml up -d --build
           
           
