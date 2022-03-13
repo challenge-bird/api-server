@@ -39,7 +39,7 @@ jobs:
         password: ${{ secrets.GEN8_SSH_PASSWORD }}
         port: ${{ secrets.GEN8_SSH_PORT }}
         script: |
-          cd ~/workspace/challenge-bird
+          cd ~/workspace/challenge-bird/api-server
           git pull origin develop
           
           
