@@ -28,7 +28,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build with Gradle # 실제 application build(-x 옵션을 통해 test는 제외)
+    - name: Build with Gradle
       run: ./gradlew test
 
     - name: Jparangdev's gen8 deploy
@@ -39,5 +39,4 @@ jobs:
         password: ${{ secrets.GEN8_SSH_PWD }}
         port: ${{ secrets.GEN8_SSH_PORT }}
         script: |
-          cd ~/workspace/challenge-bird
-          git pull origin develp
+          echo 'hhhhhhh'
